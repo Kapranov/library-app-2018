@@ -2,7 +2,7 @@
 
 ## Before
 
-![yoember](/closure-actions-done_1.png "Ember.js Tutorial")
+![yoember](/closure-actions-errors.png "Ember.js Tutorial")
 
 
 ## After
