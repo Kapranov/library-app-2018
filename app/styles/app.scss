@@ -1,0 +1,84 @@
+@import 'node_modules/susy/sass/susy';
+
+$susy: (
+  'svg-grid-colors': hsl(180, 50%, 80%),
+  'columns': susy-repeat(8),
+);
+
+.container {
+  background: susy-svg-grid() no-repeat scroll;
+}
+
+[data-span='2'] {
+  width: span(2);
+  margin-right: gutter();
+}
+
+[data-span='4'] {
+  width: span(4);
+}
+
+[data-push='2'] {
+  margin-left: span(2 wide);
+}
+
+[data-pull='1'] {
+  margin-top: 1rem;
+  margin-left: 0 - span(1 wide);
+}
+
+[data-pad='1'] {
+  padding: 0 span(1 wide);
+}
+
+html {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: calc(14px + 0.5vw);
+}
+
+body {
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 45rem;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.container {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  outline: 1px solid;
+
+  &::after {
+    clear: both;
+    content: ' ';
+    display: block;
+  }
+}
+
+[data-span] {
+  background: linear-gradient(to left, rgba(red, 0.125), rgba(red, 0.125)), rgba(white, 0.5);
+  background-clip: content-box, padding-box;
+  float: left;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  outline: 1px solid red;
+  text-align: center;
+}
+
+code {
+  font-family: 'Source Code Pro', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+}
+
+span {
+  display: inline-block;
+  white-space: nowrap;
+
+  &:first-child:not(:last-child)::after {
+    content: ' / ';
+  }
+}
